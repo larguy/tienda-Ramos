@@ -1,4 +1,4 @@
-const Header = () => {
+const NavBar = () => {
     return (
         <header id="cabecera" className="estilo">
             <h1 className="titulo">Venta de Electrodomesticos</h1>
@@ -11,4 +11,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default NavBar;

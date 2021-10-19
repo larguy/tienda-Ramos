@@ -1,10 +1,10 @@
-import Header from "./Header";
+import NavBar from "./NavBar";
 
 
 const App = () => {
     return( 
         <>
-            <Header/>
+            <NavBar/>
             <footer id="pie" >
                 <p >Links de Redes</p>
             </footer>
