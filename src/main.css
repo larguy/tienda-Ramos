@@ -14,7 +14,7 @@ code {
     monospace;
 }
 
-.titulo{
+.title{
   display: flex;
   justify-content: center;background-color: coral;
   padding: 2em;
@@ -23,16 +23,23 @@ code {
 #menu{
   display: flex;
   justify-content: space-around;
+  align-items: center;
   margin-left: 10px;
   background-color: azure;
   width: auto;
   padding: auto;
-  height: 11em;
+  height: 6em;
+  font-family: 'Oswald', sans-serif;
 }
 
-#pie{
+#foot{
   display: flex;
   justify-content: space-around;
   background-color:coral;
 }
 
+#font{
+  font-size: 1.7em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
