@@ -1,7 +1,12 @@
-const ItemListContainer = (props) => {
+import ItemCount from "./ItemCount";
 
+const ItemListContainer = (props) => {
+    
     return (
+        <>
+        <ItemCount/>
         <p id="font"> {props.greeting} </p>
+        </>
     )
 }
 
