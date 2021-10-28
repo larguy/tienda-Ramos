@@ -1,35 +1,37 @@
 import { useState } from "react";
 
 
-const useCounter = (stock = 5,initial = 1) =>{
-    const [counter, setContador] = useState(stock,initial);
+const ItemCount = () =>{
+    let stock = 5;
+    const [counter = 1, setContador] = useState();
     const up = () => setContador(counter + 1);
     const down = () => setContador(counter - 1);
+    const reset = () => setContador(1);
 
-    return (
-        counter,
-        up,
-        down,
-        stock,
-        initial
-    )
-}
-
-
-export default function ItemCount (){
-    const {counter, Up, Down, stock,initial} = useCounter();
-    
-    if(counter > stock){
-        console.log("No Hay tantos Productos")
+    if (counter > stock) {
+        console.log("no hay tanto stock de este producto");
+        setContador(stock);
+    }if (counter < 1){
+        setContador(1);
     }
 
-
     return (
-        <div id="center">
-            <p>Cantidad de Productos: {counter}</p>
-            <button onClick={Up}>+</button>
-            <button onClick={Down}>-</button>
-            <button onClick={initial}>Reset</button>
-        </div>
-    );
+        <>
+            <div >
+                <p className="center">Cantidad de Productos:</p>
+                <p className="center">{counter }</p>
+                <div className="center">
+                    <button onClick={up}>+</button>
+                    <button onClick={down}>-</button>
+                </div>
+                <div className="center">
+                    <button onClick={reset}>Reset</button>
+                </div>
+            </div>
+        </>
+    )
+    
 }
+
+
+export default ItemCount
