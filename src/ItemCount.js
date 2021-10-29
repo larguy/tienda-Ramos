@@ -1,16 +1,15 @@
 import { useState } from "react";
 
 
-const ItemCount = () =>{
-    let stock = 5;
+const ItemCount = (props) =>{
     const [counter = 1, setContador] = useState();
     const up = () => setContador(counter + 1);
     const down = () => setContador(counter - 1);
     const reset = () => setContador(1);
 
-    if (counter > stock) {
+    if (counter > props.StockQueHay) {
         console.log("no hay tanto stock de este producto");
-        setContador(stock);
+        setContador(props.StockQueHay);
     }if (counter < 1){
         setContador(1);
     }
@@ -18,8 +17,8 @@ const ItemCount = () =>{
     return (
         <>
             <div >
-                <p className="center">Cantidad de Productos:</p>
-                <p className="center">{counter }</p>
+                <h3 className="center">Cantidad de Productos:</h3>
+                <h1 className="center">{counter }</h1>
                 <div className="center">
                     <button onClick={up}>+</button>
                     <button onClick={down}>-</button>
