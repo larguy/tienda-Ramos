@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import electrodomesticos from "./productos.json"
 
 
 const ItemDetailContainer = () => {
@@ -8,28 +7,30 @@ const ItemDetailContainer = () => {
     const [productos, setProductos] = useState([]);
 
 
-const fakeProduct = fetch('https://fakestoreapi.com/products?limit=2')
-fakeProduct.then((data) => {
-    const pedidoArrayDeProductos = data.json();
-    return pedidoArrayDeProductos
-})
-.then((ArrayDeProductos) => {
-    return setProductos(ArrayDeProductos)
-})
+    const fakeProduct = () => {
+        fetch('https://fakestoreapi.com/products?limit=2')
+
+        .then((data) => {
+            return data.json();
+        })
+        .then((ArrayDeProductos) => {
+            return setProductos(ArrayDeProductos)
+        })
+    }
+
 
     useEffect(() => {
         setTimeout(() => {
-            setProductos(electrodomesticos);
+            fakeProduct()
         },2000);
-    }, [productos]);
+    }, []);
 
     if (productos.length === 0) {
         return <p> son solo unos segundos.</p>;
-    } 
-    
-    return (
+    }else
+        return (
         <>
-        <ItemDetail FormatoParaProducto={productos[0]}/>
+        <ItemDetail FormatoParaProducto={productos[1]}/>
         </>
     )
 }
