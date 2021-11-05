@@ -1,19 +1,34 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import electrodomesticos from "./productos.json"
-
+import { useParams } from "react-router";
 
 
 const ItemListContainer = (props) => {
 
+    const {tipo} = useParams()
+    console.log(props.tipo)
+    console.log("hola")
+    
     const [productos, setProductos] = useState([]);
 
-
     useEffect(() => {
-        setTimeout(() => {
-            setProductos(electrodomesticos);
-        },2000);
-    }, [productos]);
+        const prom = new Promise ((resolve, reject) => {
+            if(tipo){
+                resolve(electrodomesticos.filter(producto => producto.tipo === tipo))
+            }else{
+                resolve(electrodomesticos)
+            }
+        })
+        prom.then(data => {
+            setTimeout(() => {
+                setProductos(electrodomesticos);
+            },2000);
+        })
+        prom.catch(error => {
+            console.log(error)
+        })
+    }, [tipo]);
 
     if (productos.length === 0) {
         return <p> Aguarde estamos buscando los productos. </p>;

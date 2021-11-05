@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "tipo": "Ventilador",
+        "tipo": "ventilador",
         "modelo": "1EV1610",
         "img": "https://minicuotas.ribeiro.com.ar/images/products/large/P00001023000.jpg",
         "precio": "7000",
@@ -9,7 +9,7 @@
     },
     {
         "id": 2,
-        "tipo": "Caloventor",
+        "tipo": "caloventor",
         "modelo": "T800",
         "img": "https://www.tiomusa.com.ar/imagenes/archivos/2021-06/28407-caloventorphilcophcf20a1p.jpg",
         "precio": "4000",
@@ -17,7 +17,7 @@
     },
     {
         "id": 3,
-        "tipo": "Caloventor",
+        "tipo": "caloventor",
         "modelo": "T1000",
         "img": "https://http2.mlstatic.com/D_728515-MLA45482008131_042021-O.jpg",
         "precio": "5000",
