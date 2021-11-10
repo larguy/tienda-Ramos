@@ -5,7 +5,8 @@
         "modelo": "1EV1610",
         "img": "https://minicuotas.ribeiro.com.ar/images/products/large/P00001023000.jpg",
         "precio": "7000",
-        "stock": 7
+        "stock": 7,
+        "description": "5000 rpm"
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "modelo": "T800",
         "img": "https://www.tiomusa.com.ar/imagenes/archivos/2021-06/28407-caloventorphilcophcf20a1p.jpg",
         "precio": "4000",
-        "stock": 2
+        "stock": 2,
+        "description": "1000 W"
     },
     {
         "id": 3,
@@ -21,6 +23,7 @@
         "modelo": "T1000",
         "img": "https://http2.mlstatic.com/D_728515-MLA45482008131_042021-O.jpg",
         "precio": "5000",
-        "stock": 5
+        "stock": 5,
+        "description": "1500 W"
     }
 ]

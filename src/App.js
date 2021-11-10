@@ -12,21 +12,21 @@ const App = () => {
                 <ItemListContainer greeting="Gracias por visitarnos espero que encuentres lo que estas buscando." />
                 <ItemDetailContainer/>
 
-            <Routes>
-            <Route patch="/" element={<ItemListContainer/>} exact/>
+                <Routes>
+                    <Route patch="/" element={<ItemListContainer/>} exact/>
+                    <Route patch="/categoria/:categoriaId" element={<ItemListContainer/>} />
+                    <Route patch="/producto/:id" element={<ItemListContainer/>} />
+                </Routes>
 
-            <Route patch="/categoria/:tipo" element={<ItemListContainer/>} />
-
-            <Route patch="/categoria/:id" element={<ItemListContainer/>} />
-            </Routes>
-
-            <footer id="foot" >
-                <p >Links de Redes</p>
-            </footer>
+                <footer id="foot" >
+                    <p >Links de Redes</p>
+                </footer>
             </BrowserRouter>
         </>
     )
 }
+
+
 
 export default App;
 

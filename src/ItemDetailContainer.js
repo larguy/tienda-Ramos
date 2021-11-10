@@ -1,36 +1,27 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
 
 const ItemDetailContainer = () => {
+    const {id} = useParams()
+    console.log("tocaste sobre",id)
 
-    const [productos, setProductos] = useState([]);
-
-
-    const fakeProduct = () => {
-        fetch('https://fakestoreapi.com/products?limit=2')
-
-        .then((data) => {
-            return data.json();
-        })
-        .then((ArrayDeProductos) => {
-            return setProductos(ArrayDeProductos)
-        })
-    }
+    const [producto, setProducto] = useState([]);
 
 
     useEffect(() => {
         setTimeout(() => {
-            fakeProduct()
+            setProducto(producto.filter(producto => producto.id === parseInt(id)))
         },2000);
     }, []);
 
-    if (productos.length === 0) {
+    if (producto.length === 0) {
         return <p> son solo unos segundos.</p>;
     }else
         return (
         <>
-        <ItemDetail FormatoParaProducto={productos[1]}/>
+        <ItemDetail FormatoParaProducto={producto}/>
         </>
     )
 }
